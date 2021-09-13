@@ -1,0 +1,71 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(myapps4());
+}
+
+class myapps4 extends StatelessWidget {
+  const myapps4({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Home'),
+        ),
+        body: Center(
+            child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomButton('ok'),
+              SizedBox(
+                height: 10,
+              ),
+              CustomButton('Save'),
+              SizedBox(
+                height: 10,
+              ),
+              CustomButton('click'),
+              SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
+        )));
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final String title;
+
+  CustomButton(this.title);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        print('ontap');
+      },
+      child: Container(
+        height: 50,
+        width: 100,
+        decoration:
+            BoxDecoration(shape: BoxShape.rectangle, color: Colors.blue),
+        child: Center(child: Text(title)),
+      ),
+    );
+  }
+}
