@@ -1,0 +1,67 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(NewProject());
+}
+
+class NewProject extends StatelessWidget {
+  const NewProject({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('NewProject'),
+        ),
+        body: Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: ElevatedButton(
+              onPressed: () {
+                print("You pooked Me");
+              },
+              child: Text("Click Me"),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//statefulwidget
+
+class Newproject2 extends StatefulWidget {
+  const Newproject2({Key? key}) : super(key: key);
+
+  @override
+  _Newproject2State createState() => _Newproject2State();
+}
+
+class _Newproject2State extends State<Newproject2> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text('hello'),
+    );
+  }
+}
+
+class Custombutton extends StatelessWidget {
+  const Custombutton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: 30,
+      decoration: BoxDecoration(
+        color: Colors.brown,
+        shape: BoxShape.rectangle,
+      ),
+      child: Text("ok"),
+    );
+  }
+}
