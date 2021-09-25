@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+import 'Components/MyCard.dart';
+
+void main() {
+  runApp(NewApk());
+}
+
+class NewApk extends StatelessWidget {
+  const NewApk({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Scrolable app"),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Mycard(),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Container(
+                  height: 100,
+                  width: double.infinity,
+                  color: Colors.yellow,
+                ),
+              ),
+              Mycard(),
+              Mycard(),
+              Mycard(),
+              Mycard(),
+              Mycard(),
+              Mycard(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+// new file will be added anme as my card 
+import 'package:flutter/material.dart';
+
+class Mycard extends StatelessWidget {
+  const Mycard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Container(
+        height: 100,
+        width: double.infinity,
+        color: Colors.blueAccent,
+      ),
+    );
+  }
+}
