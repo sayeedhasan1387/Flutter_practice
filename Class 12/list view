@@ -1,0 +1,68 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+//components imports
+import 'components/MySearchBar.dart';
+import 'components/MySearchButton.dart';
+
+void main() {
+  runApp(MyContactApp());
+}
+
+class MyContactApp extends StatelessWidget {
+  const MyContactApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: const Color(0xff22343C),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          flexibleSpace: Padding(
+            padding: const EdgeInsets.fromLTRB(5.5, 10.0, 5.0, 0.0),
+            child: Row(
+              children: <Widget>[
+                const Flexible(
+                  fit: FlexFit.loose,
+                  flex: 4,
+                  child: MySearchBar(),
+                ),
+                Flexible(flex: 1, fit: FlexFit.loose, child: MySearchButton())
+              ],
+            ),
+          ),
+        ),
+        body: Container(
+          child: ListView(
+            children: [
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage("https://picsum.photos/200"),
+                  backgroundColor: Colors.cyanAccent,
+                  radius: 40.0,
+                ),
+                title: Text(
+                  "Sayeed Hasan",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                subtitle: Text("101"),
+                trailing: Column(
+                  children: const [
+                    Text(
+                      "4.20 PM",
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
